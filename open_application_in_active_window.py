@@ -5,7 +5,7 @@ from sys import argv
 import os
 
 
-def main():
+def main() -> None:
     vm_name = get_name_of_front_vm()
 
     command = get_command_to_execute(vm_name)
@@ -13,7 +13,7 @@ def main():
     os.system(command)
 
 
-def get_command_to_execute(vm_name):
+def get_command_to_execute(vm_name: str) -> str:
     if vm_name == "dom0":
         return argv[2]
 

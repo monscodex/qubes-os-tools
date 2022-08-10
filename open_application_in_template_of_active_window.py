@@ -5,7 +5,7 @@ from sys import argv
 import os
 
 
-def main():
+def main() -> None:
     vm_name = get_name_of_front_vm()
 
     if vm_name == "dom0":
@@ -18,7 +18,7 @@ def main():
     os.system(command)
 
 
-def get_command_to_execute(templatevm_name):
+def get_command_to_execute(templatevm_name: str) -> str:
     command_to_execute = argv[1]
 
     return f"qvm-run {templatevm_name} {command_to_execute}"
